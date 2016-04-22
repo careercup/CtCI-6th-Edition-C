@@ -1,1 +1,1 @@
-# CtCI-6th-Edition-C
+# C solutions for CtCI-6th-Edition
