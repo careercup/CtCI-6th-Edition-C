@@ -1,34 +1,35 @@
-// C program to find Unique character
-#include<stdlib.h>
-#include<stdio.h>
-#include<stdbool.h>
-#include<string.h>
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h> // for strlen
 
-bool isUniqueChars(char *str,int size)
+bool isUniqueChars(char* str)
 {
-    if(size > 128)
+    int length = strlen(str);
+
+    // check if string is longer than charset
+    if (length > 128)
         return false;
-	
-    bool index[128] = {0};
-    int i;
-    for (i = 0; i < size; i++)
+
+    // initialize all elements to false
+    bool char_set[128] = {false};
+
+    for (int i = 0; i < length; i++)
     {
         int val = str[i];
-        if(index[val])
+        if (char_set[val])
             return false;
-        index[val] = true;
-    } 
-    return true;
+        char_set[val] = true;
     }
+
+    return true;
+}
 
 int main()
 {
-    char str[] = "CTCI";
-    int size = strlen(str);
-    if (isUniqueChars(str,size)) 
-        printf("Unique");
-    else
-        printf("Not unique");
-    getchar();
+    // test some arbitrary strings
+    char* testStrings[5] = {"abcde", "hello", "apple", "kite", "padle"};
+    for (int i = 0; i < 5; i++)
+        // print the string followed by whether or not it has all unique characters
+        printf("%s: %s\n", testStrings[i], isUniqueChars(testStrings[i]) ? "true" : "false");
     return 0;
 }
