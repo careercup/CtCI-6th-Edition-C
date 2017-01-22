@@ -4,13 +4,15 @@
 
 static int isRotation(const char *a, const char *b)
 {
+	if (NULL == a || '\0' == *a || NULL == b || '\0' == *b)
+		return 0;
+
 	const int alen = strlen(a);
 	const int blen = strlen(b);
 
 	if (alen != blen)
 		return 0;
 
-	// should equal strings be considered a rotation on 0?
 	if (0 == strcmp(a, b))
 		return 0;
 

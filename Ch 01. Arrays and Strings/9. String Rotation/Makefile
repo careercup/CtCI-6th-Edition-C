@@ -20,5 +20,10 @@ check: main
 	./main waterbottle ATERBOTTLEW | grep 'False' > /dev/null
 	./main waterbottle aterbottlewa | grep 'False' > /dev/null
 	./main waterbottle waterbottlewaterbottle | grep 'False' > /dev/null
+	./main a a | grep 'False' > /dev/null
+	./main a aa | grep 'False' > /dev/null
+	./main aa aa | grep 'False' > /dev/null
+	./main aa aaa | grep 'False' > /dev/null
+	./main ab ba | grep 'True' > /dev/null
 
 .PHONY: clean check
