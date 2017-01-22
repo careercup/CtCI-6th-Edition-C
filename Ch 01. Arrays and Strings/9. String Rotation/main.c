@@ -14,7 +14,7 @@ static int isRotation(const char *a, const char *b)
 	if (0 == strcmp(a, b))
 		return 0;
 
-	char *buf = (char*) malloc(sizeof(char) * ((2 * alen) + 1));
+	char *buf = (char*) malloc(sizeof(char) * ((2 * blen) + 1));
 	memcpy(buf, b, blen);
 	memcpy(&buf[blen], b, blen + 1);
 
