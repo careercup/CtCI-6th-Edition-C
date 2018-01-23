@@ -6,13 +6,13 @@ int main()
 {
     char s1[1000], s2[1000];
     printf("String 1: ");
-    scanf("%[^\n]", s1);
+    scanf("%s", s1);
     printf("String 2: ");
-    scanf("%[^\n]", s2);
+    scanf("%s", s2);
     if(checkPermutation(s1, s2, strlen(s1), strlen(s2)) == 1)
-        printf("%s and %s are permutations of each other.\n", s1, s2);
+        printf("YES\n");
     else
-        printf("%s and %s are not permutations of each other.\n", s1, s2);
+        printf("NO\n");
     return 0;
 }
 
