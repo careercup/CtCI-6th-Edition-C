@@ -39,7 +39,7 @@ static int compareLists(Node *a, Node *b)
 }
 
 // return non-zero if a list is equal when read from left or from right - O(n)
-static int isPalendrome(Node *L)
+static int isPalindrome(Node *L)
 {
 	Node *Lr = reverseCopyList(L);
 	return compareLists(L, Lr);
@@ -67,6 +67,6 @@ int main(const int argc, const char *argv[])
 		p = n;
 	}
 
-	int res = isPalendrome(L);
+	int res = isPalindrome(L);
 	printf("%s\n", res ? "True" : "False");
 }
