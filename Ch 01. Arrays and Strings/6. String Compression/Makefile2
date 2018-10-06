@@ -1,0 +1,5 @@
+all:
+	gcc -Wall -W -Werror -o compress_string compress_string.c
+
+clean:
+	rm -rf *~ *.core *.o compress_string
